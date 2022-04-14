@@ -25,16 +25,16 @@ html {
     color: var(--bg);
   }
 
-  @media (prefers-color-scheme: dark) {
-    --bg: #25282A;
-    --fg: #fff;
-    --secondary: var(--blue);
+  // @media (prefers-color-scheme: dark) {
+  //   --bg: #25282A;
+  //   --fg: #fff;
+  //   --secondary: var(--blue);
 
-    ::selection {
-      background: var(--secondary);
-      color: var(--fg);
-    }
-  }
+  //   ::selection {
+  //     background: var(--secondary);
+  //     color: var(--fg);
+  //   }
+  // }
 }
 
 body {
@@ -164,7 +164,7 @@ button {
 }
 .topMenu a:hover {
  background-color:  var(--primary);
- color: var(--fg);
+ color: var(--bg);
 }
 
 header button {                         /* wallet button */
@@ -172,7 +172,7 @@ header button {                         /* wallet button */
   top: 30px;
   right: 30px;
   background: var(--primary);
-  color: var(--fg);
+  color: var(--bg);
   border-radius: 20px;
 }
 
@@ -181,7 +181,7 @@ fieldset, .elementBox {                              /* Order container */
   border-radius: 25px;
   padding: 20px;
   margin: 20px;
-  background: var(--fg);
+  background: var(--bg);
 }
 .elementBox {
   display: flex
@@ -280,10 +280,10 @@ fieldset, .elementBox {                              /* Order container */
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: var(--primary); color: var(--fg);}
+.dropdown-content a:hover {background-color: var(--primary); color: var(--bg);}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: var(--primary); color: var(--fg);}
+.dropdown:hover .dropbtn {background-color: var(--primary); color: var(--bg);}
