@@ -1,54 +1,94 @@
-import './App.css';
-import React, { useCallback, useRef, useState } from 'react';
-import Crossword from 'react-crossword-near';
-import { parseSolutionSeedPhrase } from './utils';
-import { createGridData, loadGuesses } from "react-crossword-near/dist/es/util";
-import sha256 from 'js-sha256';
+import 'regenerator-runtime/runtime';
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import Big from 'big.js';
+import Form from './components/Form';
+import SignIn from './components/SignIn';
+import Messages from './components/Messages';
 
-const App = ({ data, solutionHash }) => {
-  const crossword = useRef();
-  const [solutionFound, setSolutionFound] = useState("Not correct yet");
+const SUGGESTED_DONATION = '0';
+const BOATLOAD_OF_GAS = Big(3).times(10 ** 13).toFixed();
 
-  const onCrosswordComplete = useCallback(
-    async (completeCount) => {
-      if (completeCount !== false) {
-        let gridData = createGridData(data).gridData;
-        loadGuesses(gridData, 'guesses');
-        await checkSolution(gridData);
-      }
-    },
-    []
-  );
+const App = ({ contract, currentUser, nearConfig, wallet }) => {
+  const [messages, setMessages] = useState([]);
 
-  // This function is called when all entries are filled
-  async function checkSolution(gridData) {
-    let seedPhrase = parseSolutionSeedPhrase(data, gridData);
-    let answerHash = sha256.sha256(seedPhrase);
-    // Compare crossword solution's public key with the known public key for this puzzle
-    // (It was given to us when we first fetched the puzzle in index.js)
-    if (answerHash === solutionHash) {
-      console.log("You're correct!");
-      setSolutionFound("Correct!");
-    } else {
-      console.log("That's not the correct solution. :/");
-      setSolutionFound("Not correct yet");
-    }
-  }
+  useEffect(() => {
+    // TODO: don't just fetch once; subscribe!
+    contract.getMessages().then(setMessages);
+  }, []);
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    const { fieldset, message, donation } = e.target.elements;
+
+    fieldset.disabled = true;
+
+    // TODO: optimistically update page with new message,
+    // update blockchain data in background
+    // add uuid to each message, so we know which one is already known
+    contract.addMessage(
+      { text: message.value },
+      BOATLOAD_OF_GAS,
+      Big(donation.value || '0').times(10 ** 24).toFixed()
+    ).then(() => {
+      contract.getMessages().then(messages => {
+        setMessages(messages);
+        message.value = '';
+        donation.value = SUGGESTED_DONATION;
+        fieldset.disabled = false;
+        message.focus();
+      });
+    });
+  };
+
+  const signIn = () => {
+    wallet.requestSignIn(
+      {contractId: nearConfig.contractName, methodNames: [contract.addMessage.name]}, //contract requesting access
+      'NEAR Guest Book', //optional name
+      null, //optional URL to redirect to if the sign in was successful
+      null //optional URL to redirect to if the sign in was NOT successful
+    );
+  };
+
+  const signOut = () => {
+    wallet.signOut();
+    window.location.replace(window.location.origin + window.location.pathname);
+  };
 
   return (
-    <div id="page">
-      <h1>NEAR Crossword Puzzle</h1>
-      <div id="crossword-wrapper">
-        <h3>Status: { solutionFound }</h3>
-        <Crossword
-          data={data}
-          ref={crossword}
-          onCrosswordComplete={onCrosswordComplete}
-        />
-        <p>Thank you <a href="https://github.com/JaredReisinger/react-crossword" target="_blank" rel="noreferrer">@jaredreisinger/react-crossword</a>!</p>
-      </div>
-    </div>
+    <main>
+      <header>
+        { currentUser
+          ? <button  onClick={signOut}>Log out</button>
+          : <button  onClick={signIn}>Connect to wallet</button>
+        }
+      </header>
+      { currentUser
+        ? <Form onSubmit={onSubmit} currentUser={currentUser} />
+        : <SignIn/>
+      }
+      { !!currentUser && !!messages.length && <Messages messages={messages}/> }
+    </main>
   );
-}
+};
+
+App.propTypes = {
+  contract: PropTypes.shape({
+    addMessage: PropTypes.func.isRequired,
+    getMessages: PropTypes.func.isRequired
+  }).isRequired,
+  currentUser: PropTypes.shape({
+    accountId: PropTypes.string.isRequired,
+    balance: PropTypes.string.isRequired
+  }),
+  nearConfig: PropTypes.shape({
+    contractName: PropTypes.string.isRequired
+  }).isRequired,
+  wallet: PropTypes.shape({
+    requestSignIn: PropTypes.func.isRequired,
+    signOut: PropTypes.func.isRequired
+  }).isRequired
+};
 
 export default App;

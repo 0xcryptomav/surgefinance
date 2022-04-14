@@ -1,8 +1,7 @@
-const CONTRACT_NAME = process.env.CONTRACT_NAME || 'your-crossword-account.testnet';
+const CONTRACT_NAME = process.env.CONTRACT_NAME || 'swap.surge-demo.testnet';
 
 function getConfig(env) {
   switch(env) {
-    case 'production':
     case 'mainnet':
       return {
         networkId: 'mainnet',
@@ -11,6 +10,9 @@ function getConfig(env) {
         walletUrl: 'https://wallet.near.org',
         helperUrl: 'https://helper.mainnet.near.org'
       };
+    // This is an example app so production is set to testnet.
+    // You can move production to mainnet if that is applicable.
+    case 'production':
     case 'development':
     case 'testnet':
       return {
