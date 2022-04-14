@@ -6,6 +6,7 @@
 .pnp.js
 /dist
 /out
+/.firebase
 
 # testing
 /coverage

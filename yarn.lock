@@ -4768,6 +4768,11 @@ ignore@^5.1.4:
   version "5.1.8"
   resolved "https://registry.npmjs.org/ignore/-/ignore-5.1.8.tgz"
 
+img@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/img/-/img-3.0.3.tgz#9650f00b43d52c4d330f074094a007b061acf3d4"
+  integrity sha1-llDwC0PVLE0zDwdAlKAHsGGs89Q=
+
 immutable@^4.0.0:
   version "4.0.0"
   resolved "https://registry.npmjs.org/immutable/-/immutable-4.0.0.tgz"

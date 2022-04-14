@@ -9,6 +9,9 @@ import Messages from './components/Messages';
 const SUGGESTED_DONATION = '0';
 const BOATLOAD_OF_GAS = Big(3).times(10 ** 13).toFixed();
 
+const ethIcon = require('./img/eth.png');
+const nearIcon = require('./img/near.png');
+
 const App = ({ contract, currentUser, nearConfig, wallet }) => {
   const [messages, setMessages] = useState([]);
 

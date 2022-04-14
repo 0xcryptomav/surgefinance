@@ -116,7 +116,6 @@ button {
   &:active {
     background: var(--secondary);
     border-color: var(--secondary);
-    top: 1px;
   }
 }
 .is-premium {
@@ -167,16 +166,23 @@ button {
  color: var(--bg);
 }
 
-header button {                         /* wallet button */
+header button {                                     /* wallet button */
   position: absolute;
   top: 30px;
   right: 30px;
   background: var(--primary);
   color: var(--bg);
   border-radius: 20px;
+  border: 1px solid var(--primary);
+}
+header button:hover {
+  background: var(--bg);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  background-image: linear-gradient(37deg, #dcb5f39e, #fbd1b99e);
 }
 
-fieldset, .elementBox {                              /* Order container */
+fieldset, .elementBox {                              /* element containers */
   border: 1px solid var(--primary);
   border-radius: 25px;
   padding: 20px;
@@ -213,6 +219,16 @@ fieldset, .elementBox {                              /* Order container */
   width: 60px;
   margin-top: -60px;
 }
+.elementFooter{
+  border-radius: 0px;
+  margin: 0 -20px;
+  padding: 20px 40px;
+  border: none;
+  border-top: 1px solid var(--primary);
+}
+.elementFooter p{ margin: 5px 0; }
+.elementFooter .selection:nth-child(2){ flex:8; text-align: right; }
+
 .modeMenu{                                          /* in element menu buttons */
   color: var(--primary);
   display: table;
@@ -226,11 +242,10 @@ fieldset, .elementBox {                              /* Order container */
   display: table-cell;
   font-size: 20px;
   font-weight: 400;
+  border-bottom: 2px solid transparent;
 }
-.modeMenu a.active{
-  font-size: 30px;
-  font-weight: 600;
-}
+.modeMenu a.active{ font-size: 30px; font-weight: 600; }
+.modeMenu a:hover{  border-bottom: 2px solid var(--primary); }
 .elementButton button{                                /* Compleate button in same style as element */
   width: -webkit-fill-available;
   padding: 20px;
@@ -239,10 +254,8 @@ fieldset, .elementBox {                              /* Order container */
   border: 1px solid var(--primary);
   border-radius: 19px;
 }
-
-
-/* Dropdown Button */
-.dropbtn {
+.elementButton button:hover{ background-image: linear-gradient(37deg, #dcb5f39e, #fbd1b99e); }
+.dropbtn {                                            /* in element dropdown menu */
   background-color: transparent;
   border-radius: 19px;
   color: var(--primary);
@@ -250,15 +263,11 @@ fieldset, .elementBox {                              /* Order container */
   padding: 16px;
   font-size: 16px;
 }
-
-/* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
   display: inline-block;
   border-radius: 19px;
 }
-
-/* Dropdown Content (Hidden by Default) */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -269,8 +278,6 @@ fieldset, .elementBox {                              /* Order container */
   border: 1px solid var(--primary);
   border-radius: 19px;
 }
-
-/* Links inside the dropdown */
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
@@ -278,12 +285,6 @@ fieldset, .elementBox {                              /* Order container */
   display: block;
   border-radius: 19px;
 }
-
-/* Change color of dropdown links on hover */
 .dropdown-content a:hover {background-color: var(--primary); color: var(--bg);}
-
-/* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: var(--primary); color: var(--bg);}
