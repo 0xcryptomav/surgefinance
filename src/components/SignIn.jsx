@@ -25,9 +25,11 @@ export default function SignIn() {
         <div class="elementBox">
           <div class="selection">
             <h3>From</h3>
-
             <div class="dropdown">
-              <button class="dropbtn"><img width="30" class="logo" src={nearIcon} /> NEAR</button>
+              <button class="dropbtn">
+                <div class="circle"><img class="logo" src={nearIcon} /></div>
+                 <div class="name">NEAR</div>
+              </button>
               <div class="dropdown-content">
                 <a href=""> <img width="30" class="logo" src={ethIcon} /> ETH  </a>
                 <a href=""> <img width="30" class="logo" src={nearIcon} />  NEAR </a>
@@ -43,9 +45,12 @@ export default function SignIn() {
         <div class="elementBox">
           <div class="downArrow"></div>
           <div class="selection">
-          <p>To</p>
+          <p>To (estimated)</p>
             <div class="dropdown">
-              <button class="dropbtn"><img width="30" class="logo" src={ethIcon} /> ETH</button>
+              <button class="dropbtn">
+                <div class="circle"><img class="logo" src={ethIcon} /> </div>
+                <div class="name">ETH</div>
+              </button>
               <div class="dropdown-content">
                 <a href=""> <img width="30" class="logo" src={ethIcon} /> ETH  </a>
                 <a href=""> <img width="30" class="logo" src={nearIcon} />  NEAR </a>
