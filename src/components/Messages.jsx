@@ -9,7 +9,7 @@ export default function Messages({ messages }) {
         // TODO: format as cards, add timestamp
         <p key={i} className={message.premium ? 'is-premium' : ''}>
           <strong>User: {message.sender}</strong>:<br/>
-          Exhanged: {message.text} NEAR
+          Exchanged: {message.text} NEAR
         </p>
       )}
     </>
