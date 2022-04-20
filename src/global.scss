@@ -292,6 +292,11 @@ fieldset, .elementBox {                              /* element containers */
   border: 1px solid var(--primary);
   border-radius: 19px;
 }
+.elementButton button.btn-grey{
+  background-image: none;
+  font-size: 70%;
+}
+.elementButton button.btn-grey:hover{ background-image: none; background-color: #e8cdec; }
 .elementButton button:hover{ background-image: linear-gradient(37deg, #dcb5f39e, #fbd1b99e); }
 .dropbtn {                                            /* in element dropdown menu */
   background-color: transparent;
