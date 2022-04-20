@@ -55,13 +55,13 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
     // update blockchain data in background
     // add uuid to each message, so we know which one is already known
     contract.addMessage(
-      { text: message.value },
+      { text: swap.value },
       BOATLOAD_OF_GAS,
       Big(swap.value || '0').times(10 ** 24).toFixed()
       ).then(() => {
         contract.getMessages().then(messages => {
           setMessages(messages);
-          message.value = '';
+          message.value = swap.value;
           swap.value = SUGGESTED_DONATION;
           fieldset.disabled = false;
           message.focus();
