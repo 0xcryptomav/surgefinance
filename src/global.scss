@@ -74,13 +74,12 @@ fieldset .options:hover .invert {
   align-items: center;
   text-align: right;
   margin-bottom: 0.5em;
-  border-bottom-color: var(--primaryfaded);
-  border-bottom: 0.1em solid var(--primaryfaded);
   label {
-    margin-right: 0.5em;
+    margin-right: 0px;
   }
   input {
     text-align: right;
+    width: 100%;
     caret-color: var(--primary);
   }
 }
@@ -109,9 +108,9 @@ input {
 }
 
 input[type="number"] {
-  text-align: center;
-  border-bottom: 0.1em solid var(--primary);
-  margin: 0 1em;
+  text-align: right;
+  border-bottom: 2px solid var(--primary);
+  margin-right: -10px;
   width: 4em;
   padding-left: 0.5em;
   &:hover, &:focus {
@@ -227,7 +226,7 @@ fieldset, .elementBox {                              /* element containers */
 }
 .elementBox .price .value{
   font-size: 1.5em;
-  font-weight: bold;
+  font-weight: 400;
 }
 .elementBox .price{
   flex: 2;
@@ -256,6 +255,7 @@ fieldset, .elementBox {                              /* element containers */
   margin-top: 2px;
 }
 .elementFooter{
+  font-size: 60%;
   border-radius: 0px;
   margin: 0 -20px;
   padding: 20px 40px;

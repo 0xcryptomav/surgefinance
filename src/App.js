@@ -45,7 +45,8 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    const { fieldset, message, donation } = e.target.elements;
+    const { fieldset, message, swap } = e.target.elements;
+    console.log("starting swap");
 
     fieldset.disabled = true;
 

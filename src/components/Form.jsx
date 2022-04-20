@@ -6,7 +6,8 @@ import nearIcon from '../img/near.png';
 
 let deafults = {
   eth: {logo: ethIcon,name: 'ETH'},
-  near: {logo: nearIcon, name: 'NEAR'}
+  near: {logo: nearIcon, name: 'NEAR'},
+  userAmount : 0,
 }
 function selectFrom() {
   const [count, setCount] = useState(0);
@@ -36,18 +37,38 @@ export default function Form({ onSubmit, currentUser }) {
 
   const [currencyFrom, setCurrencyFrom] = useState(deafults.near);
   const [currencyTo, setCurrencyto] = useState(deafults.eth);
+  const [exchange, setExchange] = useState({
+    sellValue : 0,
+    sellAmount: 0,
+    buyValue: 0,
+    buyAmount: 0
+  });
 
   function changeMode(e) {
-  e.preventDefault();
-  console.log('You clicked submit.');
-  console.log(e);
-  console.log(this);
-}
+    e.preventDefault();
+    console.log('You clicked submit.');
+    console.log(e);
+    console.log(this);
+  }
+  const storeUserAmount = (e) => {
+    deafults.userAmount = e.target.value;
+    updateExchange(currencyFrom, currencyTo);
+  }
+  function updateExchange(from, to){
+    setExchange({
+      sellAmount: deafults.userAmount,
+      sellValue : (deafults.userAmount * from.usd).toFixed(2),
+      buyAmount: (from.usd / to.usd * deafults.userAmount).toFixed(Math.abs(Math.floor( Math.log10(from.usd / to.usd * deafults.userAmount) + 1))),
+      buyValue:  (from.usd * deafults.userAmount).toFixed(2),
+    });
+  }
   function changeFrom(select){
     setCurrencyFrom(select);
+    updateExchange(select, currencyTo);
   }
   function changeTo(select){
     setCurrencyto(select);
+    updateExchange(currencyFrom, select);
   }
 
   return (
@@ -84,12 +105,16 @@ export default function Form({ onSubmit, currentUser }) {
             <div class="price">
               <p class="highlight">
                 <input
+                  onChange={storeUserAmount}
                   class="value"
-                  placeholder="Amount"
-                  autoComplete="off"
-                  autoFocus
-                  id="message"
                   required
+                  autoComplete="off"
+                  defaultValue={'0'}
+                  id="swap"
+                  max={Big(currentUser.balance).div(10 ** 24)}
+                  min="0"
+                  step="0.01"
+                  type="number"
                 />
               </p>
             </div>
@@ -99,7 +124,7 @@ export default function Form({ onSubmit, currentUser }) {
               <p class="balance"> Balance: {parseFloat(currentUser.balance / (10 ** 24)).toFixed(2)} NEAR</p>
             </div>
             <div class="price">
-              <p> - $ 2489.20 </p>
+              <p> - $ {exchange.sellValue} </p>
             </div>
           </div>
         </div>
@@ -128,7 +153,7 @@ export default function Form({ onSubmit, currentUser }) {
               </div>
             </div>
             <div class="price">
-              <p class="value"> 0.2724 </p>
+              <p class="value"> {exchange.buyAmount} </p>
             </div>
           </div>
           <div class="row">
@@ -136,7 +161,7 @@ export default function Form({ onSubmit, currentUser }) {
               <p class="balance"> Balance: 0 ETH</p>
             </div>
             <div class="price">
-              <p> - $ 2489.20 </p>
+              <p> - $ {exchange.buyValue} </p>
             </div>
           </div>
         </div>
@@ -151,7 +176,7 @@ export default function Form({ onSubmit, currentUser }) {
               <p> Rate for trade </p>
             </div>
             <div class="selection">
-              <p> 1 {currencyTo.name} = {(currencyTo.usd / currencyFrom.usd).toFixed(Math.abs(Math.floor( Math.log10(currencyFrom.usd) + 1))) } {currencyFrom.name} ($ {currencyTo.usd}) </p>
+              <p> 1 {currencyFrom.name} = {(currencyFrom.usd / currencyTo.usd).toFixed(Math.abs(Math.floor( Math.log10(currencyFrom.usd) + 1) +2)) } {currencyTo.name} ($ {currencyFrom.usd}) </p>
             </div>
           </div>
            <div class="row">
@@ -159,7 +184,7 @@ export default function Form({ onSubmit, currentUser }) {
               <p> Trading route </p>
             </div>
             <div class="selection">
-              <p> {currencyTo.name} > {currencyFrom.name} </p>
+              <p> {currencyFrom.name} > {currencyTo.name} </p>
             </div>
           </div>
         </div>
