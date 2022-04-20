@@ -15,9 +15,31 @@ const nearIcon = require('./img/near.png');
 const App = ({ contract, currentUser, nearConfig, wallet }) => {
   const [messages, setMessages] = useState([]);
 
-  useEffect(() => {
-    // TODO: don't just fetch once; subscribe!
+  useEffect(() => {                                   /* TODO: don't just fetch once; subscribe! */
     contract.getMessages().then(setMessages);
+  }, []);
+
+
+  useEffect(() => {                                   /*  TODO: this is just test data: need to subscript to live date; */
+    console.log("useEffect triggered");
+    fetch('https://min-api.cryptocompare.com/data/price?fsym=USD&tsyms=BTC,ETH,NEAR')
+    .then(async response => {
+      const data = await response.json();
+      console.log(data);
+      if (!response.ok) {
+        const error = (data && data.message) || response.statusText;
+        return Promise.reject(error);
+      }
+
+      this.setState({ totalReactPackages: data })
+    })
+    .catch(error => {
+      this.setState({ errorMessage: error.toString() });
+      console.error('There was an error!', error);
+    });
+
+
+
   }, []);
 
   const onSubmit = (e) => {
@@ -48,7 +70,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
     const signIn = () => {
       wallet.requestSignIn(
       {contractId: nearConfig.contractName, methodNames: [contract.addMessage.name]}, //contract requesting access
-      'NEAR Guest Book', //optional name
+      'Surgefinance-demo', //optional name
       null, //optional URL to redirect to if the sign in was successful
       null //optional URL to redirect to if the sign in was NOT successful
       );
