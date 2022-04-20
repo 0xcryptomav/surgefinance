@@ -88,14 +88,13 @@ export default function Form({ onSubmit, currentUser }) {
           </div>
           <div class="row">
             <div class="selection">
-
               <div class="dropdown">
-                <button class="dropbtn">
+                <div class="dropbtn">
                   <div class="circle"><img class="logo" src={currencyFrom.logo} /> </div>
                   <div class="name">{currencyFrom.name}
                     <svg fill="var(--primary)" viewBox="0 0 24 24" width="24" height="24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>
                   </div>
-                </button>
+                </div>
                 <div class="dropdown-content">
                   <a onClick={(e) => changeFrom(deafults.eth, e)}><img width="30" class="logo" src={ethIcon} /> ETH  </a>
                   <a onClick={(e) => changeFrom(deafults.near, e)}><img width="30" class="logo" src={nearIcon} />  NEAR </a>
@@ -140,12 +139,12 @@ export default function Form({ onSubmit, currentUser }) {
           <div class="row">
             <div class="selection">
               <div class="dropdown">
-                <button class="dropbtn">
+                <div class="dropbtn">
                   <div class="circle"><img class="logo" src={currencyTo.logo} /> </div>
                   <div class="name">{currencyTo.name}
                     <svg fill="var(--primary)" viewBox="0 0 24 24" width="24" height="24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>
                   </div>
-                </button>
+                </div>
                 <div class="dropdown-content">
                   <a onClick={(e) => changeTo(deafults.eth, e)}><img width="30" class="logo" src={ethIcon} /> ETH  </a>
                   <a onClick={(e) => changeTo(deafults.near, e)}><img width="30" class="logo" src={nearIcon} />  NEAR </a>
