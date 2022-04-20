@@ -80,7 +80,7 @@ export default function SignIn() {
         </div>
         <div class="elementBox">
           <div class="row">
-            <p>From</p>
+            <p class="topText">From</p>
           </div>
           <div class="row">
             <div class="selection">
@@ -128,7 +128,7 @@ export default function SignIn() {
             </svg>
           </div>
           <div class="row">
-            <p>To</p>
+            <p class="topText">To</p>
           </div>
           <div class="row">
             <div class="selection">

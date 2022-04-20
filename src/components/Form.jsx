@@ -84,7 +84,7 @@ export default function Form({ onSubmit, currentUser }) {
         </div>
         <div class="elementBox">
           <div class="row">
-            <p>From</p>
+            <p class="topText">From</p>
           </div>
           <div class="row">
             <div class="selection">
@@ -134,7 +134,7 @@ export default function Form({ onSubmit, currentUser }) {
             </svg>
           </div>
           <div class="row">
-            <p>To</p>
+            <p class="topText">To</p>
           </div>
           <div class="row">
             <div class="selection">
@@ -142,7 +142,8 @@ export default function Form({ onSubmit, currentUser }) {
                 <div class="dropbtn">
                   <div class="circle"><img class="logo" src={currencyTo.logo} /> </div>
                   <div class="name">{currencyTo.name}
-                    <svg fill="var(--primary)" viewBox="0 0 24 24" width="24" height="24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>
+                    <svg width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L9 9L17 1" stroke="#730384"/></svg>
+
                   </div>
                 </div>
                 <div class="dropdown-content">
