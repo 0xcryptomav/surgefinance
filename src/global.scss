@@ -72,29 +72,31 @@ fieldset .options:hover .invert {
 }
 .highlight {
   align-items: center;
-  display: flex;
+  text-align: right;
   margin-bottom: 0.5em;
-  width: 100%;
+  border-bottom-color: var(--primaryfaded);
+  border-bottom: 0.1em solid var(--primaryfaded);
   label {
     margin-right: 0.5em;
   }
   input {
-    caret-color: var(--secondary);
+    text-align: right;
+    caret-color: var(--primary);
   }
 }
 
 label {
-  color: var(--gray);
+  color: var(--primary);
 }
 
-button, .highlight {
+button {
   border-radius: 5px;
   border-color: var(--primary);
   border: 0.1em solid var(--primary);
   padding: 0.5em 1em;
 
   &:hover, &:focus, &:focus-within {
-    border-color: var(--secondary);
+    border-color: var(--primarydark);
   }
 }
 

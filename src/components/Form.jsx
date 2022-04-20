@@ -82,7 +82,16 @@ export default function Form({ onSubmit, currentUser }) {
               </div>
             </div>
             <div class="price">
-              <p class="value"> 100.0 </p>
+              <p class="highlight">
+                <input
+                  class="value"
+                  placeholder="Amount"
+                  autoComplete="off"
+                  autoFocus
+                  id="message"
+                  required
+                />
+              </p>
             </div>
           </div>
           <div class="row">
@@ -124,7 +133,7 @@ export default function Form({ onSubmit, currentUser }) {
           </div>
           <div class="row">
             <div class="selection">
-              <p class="balance"> Balance: 0.2 ETH</p>
+              <p class="balance"> Balance: 0 ETH</p>
             </div>
             <div class="price">
               <p> - $ 2489.20 </p>
@@ -142,7 +151,7 @@ export default function Form({ onSubmit, currentUser }) {
               <p> Rate for trade </p>
             </div>
             <div class="selection">
-              <p> 1 {currencyTo.name} = {currencyTo.usd / currencyFrom.usd } {currencyFrom.name} ($ {currencyTo.usd}) </p>
+              <p> 1 {currencyTo.name} = {(currencyTo.usd / currencyFrom.usd).toFixed(Math.abs(Math.floor( Math.log10(currencyFrom.usd) + 1))) } {currencyFrom.name} ($ {currencyTo.usd}) </p>
             </div>
           </div>
            <div class="row">
