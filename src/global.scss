@@ -44,7 +44,7 @@ html {
 body {
   margin: 0 auto;
   padding: 0 1em;
-  max-width: 40em;
+  max-width: 725px;
 }
 
 fieldset {
@@ -57,6 +57,18 @@ fieldset .options {
   position: absolute;
   right: 33px;
   top: 33px;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+fieldset .options .invert, fieldset .options .default {
+  position: absolute;
+  right: 10px;
+}
+fieldset .options .invert{ opacity: 0; }
+fieldset .options:hover .default{ opacity: 0; }
+fieldset .options:hover .invert {
+  opacity: 1;
+  transition-duration: 700ms;
+  transform: rotate(25deg); /* Equal to rotateZ(45deg) */
 }
 .highlight {
   align-items: center;
@@ -114,6 +126,12 @@ button, input {
 }
 a {
   cursor: pointer;
+}
+p {
+  margin-block-start: 0.3em;
+  margin-block-end: 0.3em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
 
 button {
@@ -198,14 +216,18 @@ fieldset, .elementBox {                              /* element containers */
   margin: 4.5px 13px;
   background: var(--bg);
 }
-.elementBox {
-  display: flex
+.elementBox .row{
+  display: flex;
 }
 .elementBox .selection{
   flex: 4;
+  white-space: nowrap;
+}
+.elementBox .price .value{
+  font-size: 1.5em;
+  font-weight: bold;
 }
 .elementBox .price{
-  margin-top: 40px;
   flex: 2;
   color: var(--primary);
   position: relative;
@@ -282,7 +304,7 @@ fieldset, .elementBox {                              /* element containers */
   border: 1px solid var(--primary);
   width: 37px;
   height: 37px;
-
+  background: white;
 }
 .dropbtn .circle img {
   max-width: 37px;
@@ -298,6 +320,10 @@ fieldset, .elementBox {                              /* element containers */
   padding-left: 10px;
   line-height: 37px;
 }
+.dropbtn .name svg{
+  margin-left: 10px;
+  padding-top: 3px;
+}
 .balance {
   font-weight: 500;
 }
@@ -310,7 +336,7 @@ fieldset, .elementBox {                              /* element containers */
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  min-width: 160px;
+  min-width: 180px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   border: 1px solid var(--primary);

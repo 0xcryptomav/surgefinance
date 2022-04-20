@@ -11,8 +11,7 @@ function changeMode(e) {
   console.log(e);
   console.log(this);
 
-}
-
+};
 
 export default function SignIn() {
   return (
@@ -31,8 +30,8 @@ export default function SignIn() {
                  <div class="name">NEAR</div>
               </button>
               <div class="dropdown-content">
-                <a href=""> <img width="30" class="logo" src={ethIcon} /> ETH  </a>
-                <a href=""> <img width="30" class="logo" src={nearIcon} />  NEAR </a>
+                <a onClick={changeFrom}> <img width="30" class="logo" src={ethIcon} /> ETH  </a>
+                <a onClick={changeFrom}> <img width="30" class="logo" src={nearIcon} />  NEAR </a>
               </div>
             </div>
             <p class="balance"> Balance: ###### NEAR</p>

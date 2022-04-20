@@ -34,64 +34,65 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
       { text: message.value },
       BOATLOAD_OF_GAS,
       Big(donation.value || '0').times(10 ** 24).toFixed()
-    ).then(() => {
-      contract.getMessages().then(messages => {
-        setMessages(messages);
-        message.value = '';
-        donation.value = SUGGESTED_DONATION;
-        fieldset.disabled = false;
-        message.focus();
+      ).then(() => {
+        contract.getMessages().then(messages => {
+          setMessages(messages);
+          message.value = '';
+          donation.value = SUGGESTED_DONATION;
+          fieldset.disabled = false;
+          message.focus();
+        });
       });
-    });
-  };
+    };
 
-  const signIn = () => {
-    wallet.requestSignIn(
+    const signIn = () => {
+      wallet.requestSignIn(
       {contractId: nearConfig.contractName, methodNames: [contract.addMessage.name]}, //contract requesting access
       'NEAR Guest Book', //optional name
       null, //optional URL to redirect to if the sign in was successful
       null //optional URL to redirect to if the sign in was NOT successful
-    );
-  };
+      );
+    };
 
-  const signOut = () => {
-    wallet.signOut();
-    window.location.replace(window.location.origin + window.location.pathname);
-  };
+    const signOut = () => {
+      wallet.signOut();
+      window.location.replace(window.location.origin + window.location.pathname);
+    };
 
-  return (
-    <main>
+
+    return (
+      <main>
       <header>
-        { currentUser
-          ? <button  onClick={signOut}>Log out</button>
-          : <button  onClick={signIn}>Connect to wallet</button>
-        }
+      { currentUser
+        ? <button  onClick={signOut}>Log out</button>
+        : <button  onClick={signIn}>Connect to wallet</button>
+      }
       </header>
       { currentUser
         ? <Form onSubmit={onSubmit} currentUser={currentUser} />
         : <SignIn/>
       }
       { !!currentUser && !!messages.length && <Messages messages={messages}/> }
-    </main>
-  );
-};
+      </main>
+      );
+    };
 
-App.propTypes = {
-  contract: PropTypes.shape({
-    addMessage: PropTypes.func.isRequired,
-    getMessages: PropTypes.func.isRequired
-  }).isRequired,
-  currentUser: PropTypes.shape({
-    accountId: PropTypes.string.isRequired,
-    balance: PropTypes.string.isRequired
-  }),
-  nearConfig: PropTypes.shape({
-    contractName: PropTypes.string.isRequired
-  }).isRequired,
-  wallet: PropTypes.shape({
-    requestSignIn: PropTypes.func.isRequired,
-    signOut: PropTypes.func.isRequired
-  }).isRequired
-};
+    App.propTypes = {
+      contract: PropTypes.shape({
+        addMessage: PropTypes.func.isRequired,
+        getMessages: PropTypes.func.isRequired
+      }).isRequired,
+      currentUser: PropTypes.shape({
+        accountId: PropTypes.string.isRequired,
+        balance: PropTypes.string.isRequired
+      }),
+      nearConfig: PropTypes.shape({
+        contractName: PropTypes.string.isRequired
+      }).isRequired,
+      wallet: PropTypes.shape({
+        requestSignIn: PropTypes.func.isRequired,
+        signOut: PropTypes.func.isRequired
+      }).isRequired
+    };
 
-export default App;
+    export default App;
