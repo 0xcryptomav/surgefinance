@@ -248,8 +248,10 @@ fieldset, .elementBox {                              /* element containers */
   padding: 10px;
 }
 .downArrow svg {
-  transform: scale(1.2);
-  transform-origin: 0 0;
+  width: 100%;
+  height: 100%;
+  padding: 8px 5px;
+  margin-top: 2px;
 }
 .elementFooter{
   border-radius: 0px;
