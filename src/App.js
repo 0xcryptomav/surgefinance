@@ -45,7 +45,8 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    const { fieldset, message, swap } = e.target.elements;
+    const { fieldset, swap } = e.target.elements;
+    const message = {value : "test demo"};
     console.log("starting swap");
 
     fieldset.disabled = true;
@@ -56,12 +57,12 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
     contract.addMessage(
       { text: message.value },
       BOATLOAD_OF_GAS,
-      Big(donation.value || '0').times(10 ** 24).toFixed()
+      Big(swap.value || '0').times(10 ** 24).toFixed()
       ).then(() => {
         contract.getMessages().then(messages => {
           setMessages(messages);
           message.value = '';
-          donation.value = SUGGESTED_DONATION;
+          swap.value = SUGGESTED_DONATION;
           fieldset.disabled = false;
           message.focus();
         });
