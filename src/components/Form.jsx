@@ -58,7 +58,7 @@ export default function Form({ onSubmit, currentUser }) {
     setExchange({
       sellAmount: deafults.userAmount,
       sellValue : (deafults.userAmount * from.usd).toFixed(2),
-      buyAmount: (from.usd / to.usd * deafults.userAmount).toFixed(Math.abs(Math.floor( Math.log10(from.usd / to.usd * deafults.userAmount) + 1))),
+      buyAmount: (from.usd / to.usd * deafults.userAmount).toFixed(Math.abs(Math.floor( Math.log10(from.usd / to.usd) + 1))),
       buyValue:  (from.usd * deafults.userAmount).toFixed(2),
     });
   }

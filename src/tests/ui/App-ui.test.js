@@ -8,9 +8,9 @@ const { act } = TestRenderer;
 const contract = {
   account: {
     connection: {},
-    accountId: 'test.near'
+    accountId: 'swap.surge-demo.testnet'
   },
-  contractId: 'test.near',
+  contractId: 'swap.surge-demo.testnet',
   getMessages: () => new Promise(() => {}),
   addMessage: () => ''
 };
@@ -19,12 +19,12 @@ const walletConnection = {
   requestSignIn: () => null,
   signOut: () => null,
   isSignedIn: () => false,
-  getAccountId: () => 'test.near'
+  getAccountId: () => 'swap.surge-demo.testnet'
 };
 const nearConfig = {
   networkId: 'testnet',
   nodeUrl: 'https://rpc.testnet.near.org',
-  contractName: 'test.near',
+  contractName: 'swap.surge-demo.testnet',
   walletUrl: 'https://wallet.testnet.near.org',
   helperUrl: 'https://near-contract-helper.onrender.com'
 };
@@ -53,5 +53,5 @@ it('renders with proper title', () => {
 
   const testInstance = testRenderer.root;
 
-  expect(testInstance.findByType('h1').children).toEqual(['NEAR Guest Book']);
+  expect(testInstance.findByType('h1').children).toEqual(['Surge demo']);
 });
