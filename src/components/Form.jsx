@@ -1,19 +1,55 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Big from 'big.js';
 import ethIcon from '../img/eth.png';
 import nearIcon from '../img/near.png';
 
-function changeMode(e) {
+let deafults = {
+  eth: {logo: ethIcon,name: 'ETH'},
+  near: {logo: nearIcon, name: 'NEAR'}
+}
+function selectFrom() {
+  const [count, setCount] = useState(0);
+}
+let exchangeRates = 0;
+const getExchangeRates = fetch('https://min-api.cryptocompare.com/data/price?fsym=USD&tsyms=BTC,ETH,NEAR')
+  .then(async response => {
+    const data = await response.json();
+    console.log(data);
+    if (!response.ok) {
+      const error = (data && data.message) || response.statusText;
+      return Promise.reject(error);
+    }
+    deafults.eth.usd = (1 / data.ETH).toFixed(2);
+    deafults.near.usd = (1 / data.NEAR).toFixed(2);
+    exchangeRates = data;
+    return data;
+  })
+  .catch(error => {
+    console.error('There was an error!', error);
+  });
+
+
+
+
+export default function Form({ onSubmit, currentUser }) {
+
+  const [currencyFrom, setCurrencyFrom] = useState(deafults.near);
+  const [currencyTo, setCurrencyto] = useState(deafults.eth);
+
+  function changeMode(e) {
   e.preventDefault();
   console.log('You clicked submit.');
   console.log(e);
   console.log(this);
-
 }
+  function changeFrom(select){
+    setCurrencyFrom(select);
+  }
+  function changeTo(select){
+    setCurrencyto(select);
+  }
 
-
-export default function Form({ onSubmit, currentUser }) {
   return (
     <form onSubmit={onSubmit}>
       <fieldset id="fieldset">
@@ -34,14 +70,14 @@ export default function Form({ onSubmit, currentUser }) {
 
               <div class="dropdown">
                 <button class="dropbtn">
-                  <div class="circle"><img class="logo" src={nearIcon} /> </div>
-                  <div class="name">NEAR
+                  <div class="circle"><img class="logo" src={currencyFrom.logo} /> </div>
+                  <div class="name">{currencyFrom.name}
                     <svg fill="var(--primary)" viewBox="0 0 24 24" width="24" height="24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>
                   </div>
                 </button>
                 <div class="dropdown-content">
-                  <a href=""> <img width="30" class="logo" src={ethIcon} /> ETH  </a>
-                  <a href=""> <img width="30" class="logo" src={nearIcon} />  NEAR </a>
+                  <a onClick={(e) => changeFrom(deafults.eth, e)}><img width="30" class="logo" src={ethIcon} /> ETH  </a>
+                  <a onClick={(e) => changeFrom(deafults.near, e)}><img width="30" class="logo" src={nearIcon} />  NEAR </a>
                 </div>
               </div>
             </div>
@@ -60,8 +96,8 @@ export default function Form({ onSubmit, currentUser }) {
         </div>
         <div class="elementBox">
           <div class="downArrow">
-            <svg width="24" height="24" fill="var(--primarylight)">
-              <path d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z"/>
+            <svg fill="var(--primarylight)" viewBox="0 0 24 24" width="24" height="24">
+              <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/>
             </svg>
           </div>
           <div class="row">
@@ -71,14 +107,14 @@ export default function Form({ onSubmit, currentUser }) {
             <div class="selection">
               <div class="dropdown">
                 <button class="dropbtn">
-                  <div class="circle"><img class="logo" src={ethIcon} /> </div>
-                  <div class="name">ETH
+                  <div class="circle"><img class="logo" src={currencyTo.logo} /> </div>
+                  <div class="name">{currencyTo.name}
                     <svg fill="var(--primary)" viewBox="0 0 24 24" width="24" height="24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>
                   </div>
                 </button>
                 <div class="dropdown-content">
-                  <a href=""> <img width="30" class="logo" src={ethIcon} /> ETH  </a>
-                  <a href=""> <img width="30" class="logo" src={nearIcon} />  NEAR </a>
+                  <a onClick={(e) => changeTo(deafults.eth, e)}><img width="30" class="logo" src={ethIcon} /> ETH  </a>
+                  <a onClick={(e) => changeTo(deafults.near, e)}><img width="30" class="logo" src={nearIcon} />  NEAR </a>
                 </div>
               </div>
             </div>
@@ -106,7 +142,7 @@ export default function Form({ onSubmit, currentUser }) {
               <p> Rate for trade </p>
             </div>
             <div class="selection">
-              <p> 1 NEAR = 0.0005234234 ETH ($15.2) </p>
+              <p> 1 {currencyTo.name} = {currencyTo.usd / currencyFrom.usd } {currencyFrom.name} ($ {currencyTo.usd}) </p>
             </div>
           </div>
            <div class="row">
@@ -114,7 +150,7 @@ export default function Form({ onSubmit, currentUser }) {
               <p> Trading route </p>
             </div>
             <div class="selection">
-              <p> NEAR > ETH </p>
+              <p> {currencyTo.name} > {currencyFrom.name} </p>
             </div>
           </div>
         </div>
