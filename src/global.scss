@@ -174,15 +174,15 @@ button {
   table-layout: fixed;
   border-spacing: 2px;
 }
-.topMenu .item {
+.topMenu .nav-item {
   display: table-cell;
 }
-.topMenu a{
+.topMenu NavLink{
   color: var(--primary);
   padding: 12px;
   border-radius: 12px;
 }
-.topMenu a:hover {
+.topMenu NavLink:hover {
  background-color:  var(--primary);
  color: var(--bg);
 }
