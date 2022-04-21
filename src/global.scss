@@ -2,6 +2,13 @@
   box-sizing: border-box;
 }
 
+@import url('http://fonts.cdnfonts.com/css/lota-grotesque-alt-1');
+// font-family: 'Lota Grotesque Alt 1', sans-serif;
+// font-family: 'Lota Grotesque Alt 2', sans-serif;
+// font-family: 'Lota Grotesque Alt 3', sans-serif;
+// font-family: 'Lota Grotesque', sans-serif;
+
+
 html {
   --bg: #fff;
   --fg: #25282A;
@@ -11,18 +18,17 @@ html {
   --secondary: var(--royal);
   --tertiary: #FF585D;
 
-  --primary: #710581;
-  --primarylight: #f0a6fd;
-  --primaryfaded: #b981c1;
+  --primary: #730384;
 
 
   background-color: var(--bg);
   background-image: linear-gradient(234deg, #f7fbf7 50%, #e1b8dc);
   min-height: 100vh;
 
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-  font-size: calc(.65em + 0.7vw);
+  font-family:'Lota Grotesque Alt 1', sans-serif;
+  font-size: 18px;
   line-height: 1.3;
+  letter-spacing: 0px;
 
   ::selection {
     background: var(--secondary);
@@ -43,8 +49,8 @@ html {
 
 body {
   margin: 0 auto;
-  padding: 0 1em;
-  max-width: 725px;
+  padding: 0 10 px;
+  max-width: 479px;
 }
 
 fieldset {
@@ -55,8 +61,8 @@ fieldset {
 }
 fieldset .options {
   position: absolute;
-  right: 33px;
-  top: 33px;
+  right: 14px;
+  top: 24px;
   transition: visibility 0s, opacity 0.5s linear;
 }
 fieldset .options .invert, fieldset .options .default {
@@ -73,7 +79,7 @@ fieldset .options:hover .invert {
 .highlight {
   align-items: center;
   text-align: right;
-  margin-bottom: 0.5em;
+  margin: 0px;
   label {
     margin-right: 0px;
   }
@@ -89,10 +95,10 @@ label {
 }
 
 button {
-  border-radius: 5px;
+  border-radius: 12px;
   border-color: var(--primary);
   border: 0.1em solid var(--primary);
-  padding: 0.5em 1em;
+  // padding: 0.5em 1em;
 
   &:hover, &:focus, &:focus-within {
     border-color: var(--primarydark);
@@ -107,17 +113,6 @@ input {
   }
 }
 
-input[type="number"] {
-  text-align: right;
-  border-bottom: 2px solid var(--primary);
-  margin-right: -10px;
-  width: 4em;
-  padding-left: 0.5em;
-  &:hover, &:focus {
-    border-color: var(--secondary);
-  }
-}
-
 button, input {
   background: transparent;
   color: inherit;
@@ -129,8 +124,8 @@ a {
   cursor: pointer;
 }
 p {
-  margin-block-start: 0.3em;
-  margin-block-end: 0.3em;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
 }
@@ -145,11 +140,6 @@ button {
     background: var(--secondary);
     border-color: var(--secondary);
   }
-}
-.is-premium {
-  border-left: 0.25em solid var(--secondary);
-  padding-left: 0.25em;
-  margin-left: -0.5em;
 }
 .main {                                 /* add space for header */
   margin-top: 120px;
@@ -187,7 +177,7 @@ button {
 .topMenu a{
   color: var(--primary);
   padding: 12px;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 .topMenu a:hover {
  background-color:  var(--primary);
@@ -198,9 +188,11 @@ header button {                                     /* wallet button */
   position: absolute;
   top: 30px;
   right: 30px;
+  width: 224px;
+  height: 42px;
   background: var(--primary);
   color: var(--bg);
-  border-radius: 20px;
+  border-radius: 12px;
   border: 1px solid var(--primary);
 }
 header button:hover {
@@ -209,13 +201,24 @@ header button:hover {
   border: 1px solid var(--primary);
   background-image: linear-gradient(37deg, #dcb5f39e, #fbd1b99e);
 }
+.loginButton .wallet::before {
+}
+
+
+
 
 fieldset, .elementBox {                              /* element containers */
-  border: 1px solid var(--primaryfaded);
-  border-radius: 25px;
-  padding: 20px;
-  margin: 4.5px 13px;
+  border: 1px solid var(--primary);
+  border-radius: 20px;
+  padding: 24px;
   background: var(--bg);
+}
+.elementBox {
+  margin: 4px 0px;
+}
+.elementBox.maxBox {
+  width: 431px;
+  height: 134px;
 }
 .elementBox .row{
   display: flex;
@@ -225,42 +228,67 @@ fieldset, .elementBox {                              /* element containers */
   white-space: nowrap;
 }
 .elementBox .price .value{
-  font-size: 1.5em;
-  font-weight: 400;
+  padding: 0px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 31px;
+  text-align: right;
 }
 .elementBox .price{
   flex: 2;
   color: var(--primary);
   position: relative;
   right: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
   text-align: right;
 }
-.elementBox p {
+.elementBox .topText{
   color: var(--primary);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
 }
 .downArrow {
   border-radius: 100px;
   background: var(--primary);
   position: absolute;
-  right: calc(50% - 30px);
-  height: 60px;
-  width: 60px;
-  margin-top: -60px;
+  right: calc(50% - 20px);
+  height: 40px;
+  width: 40px;
+  margin-top: -43px;
   padding: 10px;
 }
 .downArrow svg {
   width: 100%;
   height: 100%;
-  padding: 8px 5px;
-  margin-top: 2px;
+  padding: 0px 4px
 }
 .elementFooter{
   font-size: 60%;
   border-radius: 0px;
   margin: 0 -20px;
-  padding: 20px 40px;
+  padding: 20px 40px 0px 40px;
   border: none;
-  border-top: 1px solid var(--primaryfaded);
+  border-top: 1px solid var(--primary);
+}
+.elementFooter p{
+  color: var(--primary);
+  margin: 0px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: right;
+}
+.elementFooter p.lables {
+  margin: 0px;
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  text-align: left;
 }
 .elementFooter p{ margin: 5px 0; }
 .elementFooter .selection:nth-child(2){ flex:8; text-align: right; }
@@ -269,8 +297,7 @@ fieldset, .elementBox {                              /* element containers */
   color: var(--primary);
   display: table;
   table-layout: fixed;
-  border-spacing: 30px 0px;
-  padding: 15px;
+  padding: 4px;
 
 }
 .modeMenu a{
@@ -279,18 +306,25 @@ fieldset, .elementBox {                              /* element containers */
   font-size: 20px;
   font-weight: 400;
   border-bottom: 2px solid transparent;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  padding-right: 8px;
 }
-.modeMenu a.active{ font-size: 30px; font-weight: 600; }
+.modeMenu a:nth-child(2){ padding-left: 8px;}
+.modeMenu a.active{ font-size: 20px; line-height: 26px; }
 .modeMenu a:hover{  border-bottom: 2px solid var(--primary); }
 .elementButton button{                                /* Compleate button in same style as element */
   width: -webkit-fill-available;
   color: var(--primary);
-  font-weight: 500;
   padding: 20px;
-  margin: 13.5px 13px 33px 13px;
-  background-image: linear-gradient(11deg, #dcb5f3, #fbd1b9);
+  margin: 9.5px 13px 24px 13px;
+  background: linear-gradient(58.74deg, rgba(12, 0, 56, 0.3) -44.14%, rgba(97, 32, 218, 0.3) -11.77%, rgba(255, 0, 212, 0.3) 54.54%, rgba(255, 142, 0, 0.3) 102.28%, rgba(255, 245, 0, 0.3) 159.58%);
   border: 1px solid var(--primary);
-  border-radius: 19px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 23px;
 }
 .elementButton button.btn-grey{
   background-image: none;
@@ -300,63 +334,89 @@ fieldset, .elementBox {                              /* element containers */
 .elementButton button:hover{ background-image: linear-gradient(37deg, #dcb5f39e, #fbd1b99e); }
 .dropbtn {                                            /* in element dropdown menu */
   background-color: transparent;
-  border-radius: 19px;
+  border-radius: 12px;
   color: var(--primary);
   border: 1px solid var(--primary);
-  padding: 8px;
+  padding: 3px;
   font-size: 16px;
   display: flex;
+  height: 38px;
 }
 .dropbtn .circle {
   border-radius: 100px;
-  margin-left: 7px;
+  margin: 4px 8px 4px 8px;
   border: 1px solid var(--primary);
-  width: 37px;
-  height: 37px;
+  width: 23px;
+  height: 23px;
   background: white;
 }
-.dropbtn .circle img {
-  max-width: 37px;
-  max-height: 37px;
-  padding: 10px;
+.dropdown-content .circle{
+  border-radius: 100px;
+  margin: 4px 11px 4px -4px;
+  border: 1px solid var(--primary);
+  width: 23px;
+  height: 23px;
+  background: white;
+  font-size: 18px;
+}
+.dropdown-content .circle .circleLabel{
+  position: relative;
+  top: -28px;
+  left: 28px;
+  line-height: 23px;
+  font-size: 18px;
+}
+.dropdown-content .circle img, .dropbtn .circle img {
+  max-width: 23px;
+  max-height: 23px;
+  padding: 5px;
   margin-left: -1px;
   margin-top: -1px;
 }
+
 .dropbtn .name {
   position: relative;
-  font-size: 29px;
-  font-weight: 500;
-  padding-left: 10px;
-  line-height: 37px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 33px;
+  text-align: left;
 }
 .dropbtn .name svg{
-  margin-left: 10px;
-  padding-top: 3px;
+  margin: 0px 8px;
+  padding-top: 1px;
+  margin-bottom: 2px;
 }
 .balance {
-  font-weight: 500;
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  text-align: left;
 }
 .dropdown {
   position: relative;
   display: inline-block;
-  border-radius: 19px;
+  border-radius: 12px;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
-  min-width: 180px;
+  background-color: #fff;
+  min-width: 140px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   border: 1px solid var(--primary);
-  border-radius: 19px;
+  border-radius: 12px;
 }
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-  border-radius: 19px;
+  border-radius: 12px;
+  padding: 2px 15px 2px;
 }
 .dropdown-content a:hover {background-color: var(--primary); color: var(--bg);}
 .dropdown:hover .dropdown-content {display: block;}

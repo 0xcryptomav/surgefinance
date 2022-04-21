@@ -88,7 +88,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
       <main>
       <header>
       { currentUser
-        ? <button  onClick={signOut}>Log out</button>
+        ? <div class="loginButton"><button  onClick={signOut}>Log out </button><button class="wallet"></button></div>
         : <button  onClick={signIn}>Connect to wallet</button>
       }
       </header>
@@ -96,7 +96,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
         ? <Form onSubmit={onSubmit} currentUser={currentUser} />
         : <SignIn/>
       }
-      { !!currentUser && !!messages.length && <Messages messages={messages}/> }
+      { !!currentUser && !!messages.length }
       </main>
       );
     };
