@@ -2,16 +2,16 @@ import 'regenerator-runtime/runtime';
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Big from 'big.js';
-import Form from './components/Form';
-import SignIn from './components/SignIn';
-import Messages from './components/Messages';
+import Form from './components/App-Form';
+import SignIn from './components/App-SignIn';
+import Messages from './components/App-Messages';
 
 const SUGGESTED_DONATION = '0';
 const BOATLOAD_OF_GAS = Big(3).times(10 ** 13).toFixed();
 
-const ethIcon = require('./img/eth.png');
-const nearIcon = require('./img/near.png');
-const walletIcon = require('./img/wallet.svg');
+const ethIcon = require('./assets/img/eth.png');
+const nearIcon = require('./assets/img/near.png');
+const walletIcon = require('./assets/elements/wallet.svg');
 
 const App = ({ contract, currentUser, nearConfig, wallet }) => {
   const [messages, setMessages] = useState([]);
