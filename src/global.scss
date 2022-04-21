@@ -19,6 +19,9 @@ html {
   --tertiary: #FF585D;
 
   --primary: #730384;
+  --primarylight: #F2AAFF;
+  ;
+
 
 
   background-color: var(--bg);
@@ -191,17 +194,35 @@ header button {                                     /* wallet button */
   width: 224px;
   height: 42px;
   background: var(--primary);
-  color: var(--bg);
+  color: var(--primarylight);
   border-radius: 12px;
-  border: 1px solid var(--primary);
+  border: 0px solid var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  text-align: left;
+  padding: 11px 24px;
 }
 header button:hover {
   background: var(--bg);
   color: var(--primary);
-  border: 1px solid var(--primary);
+  border: 0px solid var(--primary);
   background-image: linear-gradient(37deg, #dcb5f39e, #fbd1b99e);
 }
-.loginButton .wallet::before {
+
+.loginButton .wallet {
+  position: absolute;
+  height: 100%;
+  right: 0px;
+  top: 0px;
+  width: 59px;
+  background: var(--primary);
+  border-left: 1px solid var(--primarylight);
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  & img {
+    padding: 15px 20px;
+  }
 }
 
 

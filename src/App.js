@@ -11,6 +11,7 @@ const BOATLOAD_OF_GAS = Big(3).times(10 ** 13).toFixed();
 
 const ethIcon = require('./img/eth.png');
 const nearIcon = require('./img/near.png');
+const walletIcon = require('./img/wallet.svg');
 
 const App = ({ contract, currentUser, nearConfig, wallet }) => {
   const [messages, setMessages] = useState([]);
@@ -88,7 +89,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
       <main>
       <header>
       { currentUser
-        ? <div class="loginButton"><button  onClick={signOut}>Log out </button><button class="wallet"></button></div>
+        ? <div class="loginButton"><button  onClick={signOut}>Log out <div class="wallet"><img src={walletIcon} alt=""/></div></button></div>
         : <button  onClick={signIn}>Connect to wallet</button>
       }
       </header>
