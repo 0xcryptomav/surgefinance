@@ -9,6 +9,7 @@
 // font-family: 'Lota Grotesque', sans-serif;
 
 
+
 html {
   --bg: #fff;
   --fg: #25282A;
@@ -50,7 +51,9 @@ html {
   //   }
   // }
 }
-
+body {
+  margin: 0px;
+}
 .swapApp {
   margin: 0 auto;
   padding: 0 10 px;
