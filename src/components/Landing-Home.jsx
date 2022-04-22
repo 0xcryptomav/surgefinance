@@ -90,8 +90,24 @@ function Home() {
                 </div>
               </div>
               <div class="setView-quart">
-                <div class="row flex-container">
+                <div class="discord-container">
                   <div class="elementBox box-white">
+                    <div class="flex-container">
+                      <button  class="SurgeFeatures-button">
+                        Next gen Dex on NEAR
+                      </button>
+                    </div>
+                    <div class="flex-container">
+                      <div class="welcomeText-Header">
+                        Join our Discord
+                      </div>
+                    </div>
+                    <div class="flex-container">
+                      <p>veSurge holders always own the same % of supply encouraging longer because investors will never</p>
+                    </div>
+                    <button deactivated class="welcomeButton">
+                      Go to Discord
+                    </button>
                   </div>
                 </div>
               </div>
