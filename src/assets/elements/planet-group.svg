@@ -65,14 +65,12 @@
 <stop offset="0.158925" stop-color="#6120DA"/>
 <stop offset="0.484375" stop-color="#FF00D4"/>
 <stop offset="0.71875" stop-color="#FF8E00"/>
-<stop offset="1" stop-color="#FFF500"/>
 </linearGradient>
 <linearGradient id="paint4_linear_310_3962" x1="20.9124" y1="1130.04" x2="1144.34" y2="446.237" gradientUnits="userSpaceOnUse">
 <stop stop-color="#0C0038"/>
 <stop offset="0.158925" stop-color="#6120DA"/>
 <stop offset="0.484375" stop-color="#FF00D4"/>
 <stop offset="0.71875" stop-color="#FF8E00"/>
-<stop offset="1" stop-color="#FFF500"/>
 </linearGradient>
 <radialGradient id="paint5_radial_310_3962" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(549.54 769.663) rotate(-37.5284) scale(83.6362)">
 <stop stop-color="#F11E79"/>
