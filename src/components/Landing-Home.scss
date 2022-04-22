@@ -2,6 +2,24 @@
 @import url("../assets/fonts/Pilat Wide/stylesheet.css");
 @import url("https://fonts.googleapis.com/css?family=Inter");
 
+.backgroundBlue{
+	position: absolute;
+	filter: blur(10px);
+	@media (max-width: 767px) {
+		left: -10px;
+	}
+}
+.backgroundPink{
+	position: absolute;
+	filter: blur(10px);
+	top: 100vh;
+	@media (max-width: 767px) {
+		left: -10px;
+	}
+}
+
+
+
 /* Every class is specified with landingHome to avid global */
 .landingHome {
 	margin: 0 auto;
@@ -207,5 +225,8 @@
 	border: 1px solid var(--primary);
 	min-height: 326px;
 	margin: 17px;
+}
+.landingHome .box-white {
+	background: white;
 }
 
