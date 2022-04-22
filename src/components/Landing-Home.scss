@@ -1,16 +1,162 @@
 
+@import url("../assets/fonts/Pilat Wide/stylesheet.css");
+@import url("https://fonts.googleapis.com/css?family=Inter");
+
 .landingHome {
 	margin: 0 auto;
-	padding: 0 10 px;
+	padding: 0 10px;
 	max-width: 800px;
-}
 
-.landingHome .welcomeText{
+	/* Landing page font */
 	font-family: Pilat Wide;
-	font-size: 64px;
-	font-weight: 600;
-	line-height: 90px;
 	letter-spacing: 0em;
-	text-align: center;
 	color: var(--primary);
 }
+.landingHome .setView-quart {
+	min-height: 75vh;
+}
+
+.landingHome .gotoApp-Background {
+	font-family: Lota Grotesque Alt 1;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 18px;
+
+	border-radius: 12px;
+	position: absolute;
+	top: 32px;
+	right: 20px;
+	background: white;
+	z-index: 10;
+	& .gotoApp{
+		padding-right: 59px;
+		height: 42px;
+		width: 224px;
+		z-index: 10;
+		background: lightgrey !important;
+		color: darkgrey;
+		// background: linear-gradient(58.74deg, rgba(12, 0, 56, 0.3) -44.14%, rgba(97, 32, 218, 0.3) -11.77%, rgba(255, 0, 212, 0.3) 54.54%, rgba(255, 142, 0, 0.3) 102.28%, rgba(255, 245, 0, 0.3) 159.58%);
+	}
+	& .gotoApp:hover {
+		background: lightgrey !important;
+		color: darkgrey;
+		border: 1px solid var(--primary);
+	}
+	& .wallet {
+		position: absolute;
+		height: 100%;
+		right: 0px;
+		top: 0px;
+		width: 59px;
+		border-left: 1px solid var(--primary);
+		border-top-right-radius: 12px;
+		border-bottom-right-radius: 12px;
+		& img {
+			padding: 15px 20px;
+		}
+	}
+}
+.landingHome .welcomePlanets {
+	position: absolute;
+	top: 0px;
+	right: 0;
+	width: 35vw;
+	z-index: 1;
+	@media (max-width:1200px) {
+		top: 250px;
+	}
+
+	@media (max-width: 767px) {
+		top: -60px;
+		position: relative;
+		width: 100%;
+		width: 100%;
+	}
+	@media (max-width: 500px) {
+		top: 0px;
+	}
+}
+
+.landingHome .welcomeText-Header{
+	font-size: 64px;
+	font-weight: 500;
+	line-height: 90px;
+	text-align: center;
+	z-index: 2;
+	@media (max-width: 767px) {
+		text-align: left;
+		font-size: 45px;
+		line-height: 70px;
+	}
+	@media (max-width: 500px) {
+		font-size: 30px;
+		line-height: 50px;
+	}
+}
+.landingHome .welcomeText-Content{
+	// font-family: Inter;
+	font-size: 24px;
+	font-weight: 200;
+	line-height: 29px;
+
+	padding: 0 25%;
+	margin-top: 26px;
+	z-index: 2;
+	@media (max-width: 767px) {
+		padding: 0 20px;
+	}
+}
+.welcomeButton{
+	background: linear-gradient(58.74deg, rgba(12, 0, 56, 0.3) -44.14%, rgba(97, 32, 218, 0.3) -11.77%, rgba(255, 0, 212, 0.3) 54.54%, rgba(255, 142, 0, 0.3) 102.28%, rgba(255, 245, 0, 0.3) 159.58%);
+	height: 42px;
+	width: 224px;
+	border-radius: 12px;
+	border: 1px solid var(--primary);;
+	color: var(--primary);
+	font-family:'Lota Grotesque Alt 1', sans-serif;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 18px;
+	z-index: 2;
+
+	display: block;
+	margin: 57px auto;
+	max-width: 224px;
+}
+.landingHome .featured-row-text {
+	// font-family: Inter;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 30px;
+	text-align: center;
+	padding: 0 20px;
+}
+.landingHome .featured-row {
+	text-align: center;
+	margin-bottom: 82px;
+	& h3 {
+		margin: 12px;
+		font-family: Pilat Wide;
+		font-size: 32px;
+		font-weight: 400;
+		line-height: 41px;
+	}
+	& p {
+		// font-family: Inter;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 19px;
+
+	}
+}
+
+
+
+/* page view generic*/
+.landingHome .flex-container {
+	display: flex;
+}
+.landingHome .flex-2 {
+	flex: 2;
+}
+
