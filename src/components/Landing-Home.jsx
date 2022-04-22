@@ -30,7 +30,7 @@ function Home() {
               <div class="welcomeText-Header">Engine on NEAR</div>
               <div class="welcomeText-Content">Swap, earn, and build on the leading decentralized crypto trading protocol.</div>
               <button deactivated class="welcomeButton">
-                Read our docs
+                JOIN OUR COMMUNITY
               </button>
               <img class="welcomePlanets" src={planetGroup} />
             </div>

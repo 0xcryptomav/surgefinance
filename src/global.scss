@@ -25,8 +25,8 @@ html {
 
 
 
-  background-color: var(--bg);
-  // background-image: linear-gradient(234deg, #f7fbf7 50%, #e1b8dc);
+  //background-color: var(--bg);
+  background-image: linear-gradient(234deg, #f7fbf7 50%, #e1b8dc);
 
   min-height: 100vh;
 
@@ -156,7 +156,7 @@ button {
   position: absolute;
   left: 0px;
   top: 0px;
-  padding: 0px 30px;
+  padding: 0px 130px;
   margin: 30px 0;
 }
 .header h1 {                            /* Logo with text */
@@ -446,3 +446,6 @@ fieldset, .elementBox {                              /* element containers */
 .dropdown-content a:hover {background-color: var(--primary); color: var(--bg);}
 .dropdown:hover .dropdown-content {display: block;}
 .dropdown:hover .dropbtn {background-color: var(--primary); color: var(--bg);}
+
+
+

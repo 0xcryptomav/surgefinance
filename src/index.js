@@ -5,7 +5,7 @@ import getConfig from './config.js';
 import * as nearAPI from 'near-api-js';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
-import { Navigation, Footer, Home, Swap } from "./components";
+import { Navigation, Footer, Home, Swap, Comming } from "./components";
 
 import { createRoot } from 'react-dom/client';
 
@@ -56,7 +56,7 @@ window.nearInitPromise = initContract().then(
 
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Comming />} />
           <Route path="/swap" element={<App
               contract={contract}
               currentUser={currentUser}

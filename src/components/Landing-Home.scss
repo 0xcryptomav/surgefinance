@@ -37,11 +37,15 @@
 .landingHome .setView-quart {
 	min-height: 65vh;
 }
+.landingHome .comming-page{
+	margin-top: 100px;
+}
 
 .landingHome .gotoApp-Background {
+	display: none;
 	font-family: Lota Grotesque Alt 1;
 	font-size: 14px;
-	font-weight: 400;
+	font-weight: 550;
 	line-height: 18px;
 
 	border-radius: 12px;
@@ -99,7 +103,7 @@
 
 .landingHome .welcomeText-Header{
 	font-size: 64px;
-	font-weight: 500;
+	font-weight: 550;
 	line-height: 90px;
 	text-align: center;
 	z-index: 2;
@@ -108,8 +112,8 @@
 		line-height: 70px;
 	}
 	@media (max-width: 500px) {
-		font-size: 30px;
-		line-height: 50px;
+		font-size: 40px;
+    	line-height: 48px;
 	}
 }
 .landingHome .welcomeText-Content{
@@ -117,6 +121,7 @@
 	font-size: 24px;
 	font-weight: 200;
 	line-height: 29px;
+	text-align: center;
 
 	padding: 0 25%;
 	margin-top: 26px;
@@ -125,7 +130,7 @@
 		padding: 0 10%;
 	}
 }
-.welcomeButton{
+.landingHome .welcomeButton{
 	background: linear-gradient(58.74deg, rgba(12, 0, 56, 0.3) -44.14%, rgba(97, 32, 218, 0.3) -11.77%, rgba(255, 0, 212, 0.3) 54.54%, rgba(255, 142, 0, 0.3) 102.28%, rgba(255, 245, 0, 0.3) 159.58%);
 	height: 42px;
 	width: 224px;
@@ -142,6 +147,11 @@
 	margin: 57px auto;
 	max-width: 224px;
 }
+.landingHome .welcomeButton:hover {
+	border: 1px solid var(--primary);
+	background: var(--primary);
+	color: var(--bg);
+}
 .landingHome .featured-row-text {
 	// font-family: Inter;
 	font-size: 20px;
@@ -157,13 +167,13 @@
 		margin: 32px 0 12px 0;
 		font-family: Pilat Wide;
 		font-size: 32px;
-		font-weight: 400;
+		font-weight: 550;
 		line-height: 41px;
 	}
 	& p {
 		// font-family: Inter;
 		font-size: 16px;
-		font-weight: 400;
+		font-weight: 450;
 		line-height: 19px;
 
 	}
@@ -184,7 +194,7 @@
 	border-radius: 50px;
 	// font-family: Inter;
 	font-size: 16px;
-	font-weight: 400;
+	font-weight: 550;
 	line-height: 24px;
 	@media (max-width: 767px) {
 		width: calc(100% - 34px);
@@ -200,7 +210,7 @@
 	& h3{
 		font-family: Pilat Wide;
 		font-size: 32px;
-		font-weight: 400;
+		font-weight: 550;
 		line-height: 41px;
 	}
 	& p{
