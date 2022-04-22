@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
 import './Core-Footer.scss';
 
@@ -7,7 +7,16 @@ import logoTelegram from '../assets/elements/logo-Telegram.svg';
 import logoMedium from '../assets/elements/logo-Medium.svg';
 import logoGithub from '../assets/elements/logo-Github.svg';
 
+
+
 function Footer() {
+      const [date , setDate] = useState(new Date().getFullYear());
+
+
+
+
+
+
   return (
     <div className="footer">
       <footer class="py-5 bg-dark fixed-bottom">
@@ -79,7 +88,7 @@ function Footer() {
             </ul>
             <ul class="footerMenu flow-right">
               <li class="nav-item ">
-                © Copyright Surge Inc 2022, all rights reserved
+                © Copyright Surge Inc {date}, all rights reserved
               </li>
             </ul>
           </div>
