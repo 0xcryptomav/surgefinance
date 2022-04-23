@@ -43,7 +43,6 @@ async function initContract() {
 const container = document.getElementById('root');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
 
-/* Add <Navigation /> under routes later to get back nav buttons */
 window.nearInitPromise = initContract().then(
   ({ contract, currentUser, nearConfig, walletConnection }) => {
     root.render(
@@ -55,6 +54,7 @@ window.nearInitPromise = initContract().then(
       // />,
 
       <Router>
+      <Navigation />
         <Routes>
           <Route path="/" element={<Comming />} />
           <Route path="/home" element={<Home />} />

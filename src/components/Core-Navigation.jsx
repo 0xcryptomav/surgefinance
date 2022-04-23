@@ -4,32 +4,32 @@ import logo from '../assets/elements/logo.svg';
 
 function Navigation() {
   return (
-    <div className="navigation header">
-    <NavLink className="navbar-brand" to="/">
+    <div class="navigation header">
+    <NavLink class="navbar-brand" to="/">
       <img class="logo header-logo" src={logo} />
     </NavLink>
-      <nav className="navbar navbar-expand navbar-dark bg-dark">
-        <div className="container">
+      <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <div class="container">
           <div>
-            <ul className="navbar-nav ml-auto topMenu">
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/">
+            <ul class="navbar-nav ml-auto topMenu">
+              <li class="nav-item">
+                <NavLink class="nav-link" to="/">
                   Home
-                  <span className="sr-only"></span>
+                  <span class="sr-only"></span>
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/swap">
+              <li class="nav-item">
+                <NavLink class="nav-link" to="/swap">
                   Swap
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/contact">
+              <li class="nav-item">
+                <NavLink class="nav-link" to="/contact">
                   Lock
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/blog">
+              <li class="nav-item">
+                <NavLink class="nav-link" to="/blog">
                   Vote
                 </NavLink>
               </li>

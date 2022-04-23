@@ -181,14 +181,15 @@ button {
 .topMenu .nav-item {
   display: table-cell;
 }
-.topMenu NavLink{
+.topMenu a{
+  text-decoration: none;
   color: var(--primary);
-  padding: 12px;
-  border-radius: 12px;
+  border-bottom: 1px solid transparent;
+  padding: 0px;
+  border-radius: 0px;
 }
-.topMenu NavLink:hover {
- background-color:  var(--primary);
- color: var(--bg);
+.topMenu a:hover {
+  border-bottom: 1px solid var(--primary);
 }
 
 header button {                                     /* wallet button */
