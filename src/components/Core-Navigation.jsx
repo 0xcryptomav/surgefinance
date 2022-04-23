@@ -8,7 +8,7 @@ function Navigation() {
     <NavLink class="navbar-brand" to="/">
       <img class="logo header-logo" src={logo} />
     </NavLink>
-      <nav class="navbar navbar-expand navbar-dark bg-dark">
+      <nav class="navbar">
         <div class="container">
           <div>
             <ul class="navbar-nav ml-auto topMenu">

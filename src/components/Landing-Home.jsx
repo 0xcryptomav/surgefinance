@@ -28,7 +28,7 @@ function Home() {
         </div>
         <div class="container">
           <div class="setView-quart">
-              <div class="flex-container">
+              <div class="SurgeFeatures-label-container">
                 <a href="https://near.org/" class="SurgeFeatures-label label-hover">
                   Powered by: <div class="circle"><img width="27" src={nearIcon}/></div>
                 </a>
