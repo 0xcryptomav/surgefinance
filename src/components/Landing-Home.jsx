@@ -1,5 +1,7 @@
 import React from "react";
 import './Landing-Home.scss';
+import { HashLink as Link } from 'react-router-hash-link';
+
 import planetFlat from '../assets/elements/planet-flat.svg';
 import planetGroup from '../assets/elements/planet-group.svg';
 import nearIcon from '../assets/img/near.png';
@@ -26,6 +28,11 @@ function Home() {
         </div>
         <div class="container">
           <div class="setView-quart">
+              <div class="flex-container">
+                <a href="https://near.org/" class="SurgeFeatures-label label-hover">
+                  Powered by: <div class="circle"><img width="27" src={nearIcon}/></div>
+                </a>
+              </div>
               <div class="welcomeText-Header">Central Liquidity</div>
               <div class="welcomeText-Header">Engine on NEAR</div>
               <div class="welcomeText-Content">Swap, earn, and build on the leading decentralized crypto trading protocol.</div>
@@ -56,11 +63,6 @@ function Home() {
             </div>
             <div class="setView-quart">
               <img class="endWithBackground" width="100%" src={planetFlat} />
-              <div class="flex-container">
-                <button  class="SurgeFeatures-button">
-                  Powered by: <img width="27" src={nearIcon}/>
-                </button>
-              </div>
               <div class="flex-container">
                 <div class="welcomeText-Header">
                   Surge features
@@ -93,9 +95,9 @@ function Home() {
                 <div class="discord-container">
                   <div class="elementBox box-white">
                     <div class="flex-container">
-                      <button  class="SurgeFeatures-button">
+                      <div  class="SurgeFeatures-label">
                         Next gen Dex on NEAR
-                      </button>
+                      </div>
                     </div>
                     <div class="flex-container">
                       <div class="welcomeText-Header">

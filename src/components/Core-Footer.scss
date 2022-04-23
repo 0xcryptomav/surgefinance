@@ -1,5 +1,6 @@
 .footer {
   margin: 0 auto;
+  margin-top: 200px;
   padding: 0 80px;
 }
 
@@ -13,7 +14,18 @@
   font-weight: 500;
   line-height: 19px;
 }
+.footer a {
+  border-bottom: 1px solid transparent;
+  border-radius: 0px;
+}
+.footer a:hover {
+  border-bottom: 1px solid var(--primary);
+}
+.footer a:hover h3 {
+  border-bottom: 1px solid var(--primary);
+}
 .footer h3{
+  border-bottom: 1px solid transparent;
   font-family: Pilat Wide;
   font-size: 22px;
   font-weight: 600;
@@ -54,18 +66,8 @@
   position: relative;
   border-spacing: 2px;
   & a{
-    margin: 0 24px 0 -10px;
-    border-radius: 12px;
-    padding: 10px;
-  }
-  & .nav-link a{
-    color: var(--primary);
-    padding: 12px;
-    border-radius: 12px;
-  }
-  & a:hover {
-    background-color:  var(--primary);
-    color: var(--bg);
+    margin: 0 24px 0 0px;
+
   }
   &.flow-right {
     @media (max-width: 802px) {

@@ -56,7 +56,7 @@ window.nearInitPromise = initContract().then(
       <Router>
       <Navigation />
         <Routes>
-          <Route path="/" element={<Comming />} />
+          <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/swap" element={<App
               contract={contract}

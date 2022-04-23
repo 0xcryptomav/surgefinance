@@ -27,22 +27,16 @@ function Footer() {
           <div class="flow-row bottom-line">
             <ul class="community">
               <li class="nav-item">
-                <h3>Telegram</h3>
-                <NavLink to="/">
+                <a href="https://t.me/surge">
+                  <h3>Telegram</h3>
                   <p>@surge</p>
-                </NavLink>
+                </a>
               </li>
               <li class="nav-item">
-                <h3>Twitter</h3>
-                <NavLink to="/">
+                <a href="https://twitter.com/surge_finance">
+                  <h3>Twitter</h3>
                   <p>@surge_finance</p>
-                </NavLink>
-              </li>
-              <li class="nav-item">
-                <h3>Email</h3>
-                <NavLink to="/">
-                  <p>eam@surgefinance.xyz</p>
-                </NavLink>
+                </a>
               </li>
             </ul>
             <ul class="community flow-right">
@@ -58,12 +52,7 @@ function Footer() {
               </li>
               <li class="nav-item">
                 <NavLink to="/">
-                  <h3>Github</h3>
-                </NavLink>
-              </li>
-              <li class="nav-item">
-                <NavLink to="/">
-                  <h3>Whitepaper</h3>
+                  <h3>FAQ</h3>
                 </NavLink>
               </li>
             </ul>
@@ -76,12 +65,12 @@ function Footer() {
                 </NavLink>
               </li>
               <li class="nav-item">
-                <NavLink class="nav-link" to="/swap">
+                <NavLink class="nav-link" to="/">
                   Terms of service
                 </NavLink>
               </li>
               <li class="nav-item">
-                <NavLink class="nav-link" to="/contact">
+                <NavLink class="nav-link" to="/">
                   Privacy
                 </NavLink>
               </li>
