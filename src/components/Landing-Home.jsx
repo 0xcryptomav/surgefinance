@@ -30,7 +30,7 @@ function Home() {
           <div class="setView-quart">
               <div class="SurgeFeatures-label-container">
                 <a href="https://near.org/" class="SurgeFeatures-label label-hover">
-                  Powered by: <div class="circle"><img width="27" src={nearIcon}/></div>
+                  POWERED BY <div class="circle"><img width="27" src={nearIcon}/></div>
                 </a>
               </div>
               <div class="welcomeText-Header">Central Liquidity</div>
@@ -40,8 +40,6 @@ function Home() {
                 JOIN OUR COMMUNITY
               </button>
               <img class="welcomePlanets" src={planetGroup} />
-            </div>
-            <div class="setView-quart">
 
               <div class="row featured-row flex-container">
                 <div class="flex-2">
@@ -57,7 +55,7 @@ function Home() {
                   <p> Tokens supported </p>
                 </div>
               </div>
-              <div class="row featured-row-text">
+              <div class="row featured-row-text custom-margin">
                   <p> Hovering above the Terra ecosystem, Astroport is a neutral marketplace where anyone, from anywhere in the galaxyMirrorOrionAnchor</p>
               </div>
             </div>

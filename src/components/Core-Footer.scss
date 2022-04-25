@@ -17,12 +17,13 @@
 .footer a {
   border-bottom: 1px solid transparent;
   border-radius: 0px;
+  color: var(--bg);
 }
 .footer a:hover {
-  border-bottom: 1px solid var(--primary);
+  border-bottom: 1px solid transparent;
 }
 .footer a:hover h3 {
-  border-bottom: 1px solid var(--primary);
+  border-bottom: 1px solid transparent;
 }
 .footer h3{
   border-bottom: 1px solid transparent;
