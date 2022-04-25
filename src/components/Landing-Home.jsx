@@ -39,8 +39,14 @@ function Home() {
               <button deactivated class="welcomeButton">
                 JOIN OUR COMMUNITY
               </button>
-              <img class="welcomePlanets" src={planetGroup} />
-
+              <div class="planetsPlaceholder">
+                <div class="welcomePlanets">
+                  <img class="backgroundGroup" src={planetGroup} />
+                  <div class="planetTilt">
+                    <div class="orbiter"></div>
+                  </div>
+                </div>
+              </div>
               <div class="row featured-row flex-container">
                 <div class="flex-2">
                   <h3>$5M+</h3>
