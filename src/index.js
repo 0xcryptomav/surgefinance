@@ -43,8 +43,6 @@ async function initContract() {
 const container = document.getElementById('root');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
 
-// <Navigation /><Footer />
-
 window.nearInitPromise = initContract().then(
   ({ contract, currentUser, nearConfig, walletConnection }) => {
     root.render(
@@ -55,15 +53,21 @@ window.nearInitPromise = initContract().then(
       //   wallet={walletConnection}
       // />,
 
-
       <Router>
+      <Navigation />
         <Routes>
-          <Route path="/" element={<Comming />} />
-          <Route path="/home" element={<Comming />} />
-          <Route path="/swap" element={<Comming />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/swap" element={<App
+              contract={contract}
+              currentUser={currentUser}
+              nearConfig={nearConfig}
+              wallet={walletConnection}
+            />}>
             ,
           </Route>
         </Routes>
+        <Footer />
       </Router>,
     );
   }
