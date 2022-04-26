@@ -21,6 +21,8 @@ html {
 
   --primary: #730384;
   --primarylight: #F2AAFF;
+  --primarydark: #78058b;
+
   ;
 
 
@@ -177,6 +179,7 @@ button {
   }
 }
 .topMenu{                               /* Center menu buttons */
+  z-index: 10;
   float: right;
   position: relative;
   display: table;
@@ -197,8 +200,10 @@ button {
 }
 .topMenu .nav-item {
   display: table-cell;
+  z-index: 10;
 }
 .topMenu a{
+  z-index: 10;
   text-decoration: none;
   color: var(--primary);
   border-bottom: 1px solid transparent;
@@ -206,7 +211,7 @@ button {
   border-radius: 0px;
 }
 .topMenu a:hover {
-  color: var(--primarylight);
+  color: #868f97;
 }
 
 header button {                                     /* wallet button */

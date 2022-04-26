@@ -43,7 +43,7 @@ function Home() {
                 <div class="welcomePlanets">
                   <img class="backgroundGroup" src={planetGroup} />
                   <div class="planetTilt">
-                    <div class="orbiter"></div>
+                    <div class="orbiter-stop"></div>
                   </div>
                 </div>
               </div>
