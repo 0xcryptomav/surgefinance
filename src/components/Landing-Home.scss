@@ -367,6 +367,9 @@
 		background: transparent;
 		padding: 3px;
 	}
+	&.label-hover:hover img{
+		filter: invert(17%) sepia(98%) saturate(6793%) hue-rotate(290deg) brightness(60%) contrast(104%);
+	}
 	&.label-hover:hover {
 		// background: var(--primary);
 		// color: var(--bg);
@@ -375,7 +378,7 @@
 	& .circle {
 		border-radius: 100px;
 		margin: -27px 5px 2px 170px;
-		border: 1px solid var(--bg);
+		// border: 1px solid var(--bg);
 		width: 30px;
 		height: 30px;
 		background: transparent;

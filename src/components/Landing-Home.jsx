@@ -4,7 +4,7 @@ import { HashLink as Link } from 'react-router-hash-link';
 
 import planetFlat from '../assets/elements/planet-flat.svg';
 import planetGroup from '../assets/elements/planet-group.svg';
-import nearIcon from '../assets/img/near-grey.png';
+import nearIcon from '../assets/elements/near-grey.svg';
 import backgroundBlue from '../assets/elements/backgroundBlue.svg';
 import backgroundPink from '../assets/elements/backgroundPink.svg';
 import featuresIconPaper from '../assets/elements/featuresIconPaper.svg';
