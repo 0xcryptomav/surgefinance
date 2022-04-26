@@ -53,9 +53,9 @@ function Home() {
                 </div>
               </div>
               <div class="flex-container comming-page">
-                <button  class="SurgeFeatures-button">
-                  Powered by: <img width="27" src={nearIcon}/>
-                </button>
+                <div  class="SurgeFeatures-button">
+
+                </div>
               </div>
               <div class="welcomeText-Header">
                 Coming soon
