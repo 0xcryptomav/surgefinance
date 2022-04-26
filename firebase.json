@@ -1,16 +1,25 @@
 {
   "hosting": {
+    "public": "dist"
+  },
+  "hosting": [ {
+    "site": "surgefinance",
+    "public": "dist"
+  },
+  {
+    "site": "dev-surgefinance",
     "public": "dist",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
     "rewrites": [
       {
         "source": "**",
         "destination": "/index.html"
       }
+    ],
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
     ]
   }
+]
 }
