@@ -28,11 +28,6 @@ function Home() {
         </div>
         <div class="container">
           <div class="setView-quart">
-              <div class="SurgeFeatures-label-container">
-                <a href="https://near.org/" class="SurgeFeatures-label label-hover">
-                  POWERED BY <div class="circle"><img width="27" src={nearIcon}/></div>
-                </a>
-              </div>
               <div class="welcomeText-Header">Central Liquidity</div>
               <div class="welcomeText-Header">Engine on NEAR</div>
               <div class="welcomeText-Content">Swap, earn, and build on the leading decentralized crypto trading protocol.</div>
