@@ -4,7 +4,7 @@ import { HashLink as Link } from 'react-router-hash-link';
 
 import planetFlat from '../assets/elements/planet-flat.svg';
 import planetGroup from '../assets/elements/planet-group.svg';
-import nearIcon from '../assets/img/near.png';
+import nearIcon from '../assets/img/near-grey.png';
 import backgroundBlue from '../assets/elements/backgroundBlue.svg';
 import backgroundPink from '../assets/elements/backgroundPink.svg';
 import featuresIconPaper from '../assets/elements/featuresIconPaper.svg';
@@ -28,6 +28,11 @@ function Home() {
         </div>
         <div class="container">
           <div class="setView-quart">
+              <div class="SurgeFeatures-label-container">
+                <a href="https://near.org/" class="SurgeFeatures-label label-hover">
+                  POWERED BY <div class="circle"><img width="27" src={nearIcon}/></div>
+                </a>
+              </div>
               <div class="welcomeText-Header">Central Liquidity</div>
               <div class="welcomeText-Header">Engine on NEAR</div>
               <div class="welcomeText-Content">Swap, earn, and build on the leading decentralized crypto trading protocol.</div>

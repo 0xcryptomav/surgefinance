@@ -345,11 +345,11 @@
 }
 .landingHome .SurgeFeatures-label{
 	margin-top: 40px;
-	color: var(--fg);
+	color: #868f97;
 	margin-bottom: 40px;
 	padding: 12px 60px 12px 24px;
-	background: var(--bg);
-	border: 1px solid var(--primary);
+	background: transparent;
+	border: 0px solid var(--primary);
 	box-sizing: border-box;
 	border-radius: 50px;
 	// font-family: Inter;
@@ -368,8 +368,9 @@
 		padding: 3px;
 	}
 	&.label-hover:hover {
-		background: var(--primary);
-		color: var(--bg);
+		// background: var(--primary);
+		// color: var(--bg);
+		color:var(--primary);
 	}
 	& .circle {
 		border-radius: 100px;
@@ -377,7 +378,7 @@
 		border: 1px solid var(--bg);
 		width: 30px;
 		height: 30px;
-		background: white;
+		background: transparent;
 	}
 }
 .landingHome .SurgeFeatures{
@@ -402,9 +403,11 @@
 		padding-top: 100px;
 	}
 	& .SurgeFeatures-label{
+		border: 0px;
 		margin: 0px;
 		padding: 12px 24px;
 		margin-bottom: 20px;
+
 	}
 	& .welcomeText-Header{
 		margin-bottom: 40px;
