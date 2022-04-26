@@ -148,42 +148,59 @@
 	background: linear-gradient(58.74deg, rgba(12, 0, 56, 0.3) -44.14%, rgba(97, 32, 218, 0.3) -11.77%, rgba(255, 0, 212, 0.3) 54.54%, rgba(255, 142, 0, 0.3) 102.28%, rgba(255, 245, 0, 0.3) 159.58%);
 	border: 1px solid #730384;
 }
-
 @keyframes orbit {
 	0%   { transform: translateX(100%)
-		scale(0.0) rotate(-80deg);
+		scale(0.28) rotate(-90deg);
 	}
-	10%  { transform: translateX(80%)
-		scale(0.15) rotate(-60deg);
-	}
-	20%  { transform: translateX(60%)
-		scale(0.28) rotate(-30deg);
-	}
-	30% { transform: translateX(40%)
-		scale(0.33) rotate(-20deg);
-	}
-	40% { transform: translateX(20%)
-		scale(0.37) rotate(-10deg);
-	}
-	50% { transform: translateX(0%)
+	25% { transform: translateX(0%)
 		scale(0.40) rotate(0deg);
 	}
-	60% { transform: translateX(-20%)
-		scale(0.37) rotate(10deg);
+	50% { transform: translateX(-100%)
+		scale(0.28) rotate(90deg);
 	}
-	70% { transform: translateX(-40%)
-		scale(0.33) rotate(20deg);
+	75% { transform: translateX(0%)
+		scale(0.40) rotate(0deg);
 	}
-	80% { transform: translateX(-60%)
-		scale(0.28) rotate(30deg);
-	}
-	90% { transform: translateX(-80%)
-		scale(0.15) rotate(60deg);
-	}
-	100% { transform: translateX(-100%)
-		scale(0.0) rotate(80deg);
+	100% { transform: translateX(100%)
+		scale(0.28) rotate(-90deg);
 	}
 }
+
+// @keyframes orbit {
+// 	0%   { transform: translateX(100%)
+// 		scale(0.0) rotate(-80deg);
+// 	}
+// 	10%  { transform: translateX(80%)
+// 		scale(0.15) rotate(-60deg);
+// 	}
+// 	20%  { transform: translateX(60%)
+// 		scale(0.28) rotate(-30deg);
+// 	}
+// 	30% { transform: translateX(40%)
+// 		scale(0.33) rotate(-20deg);
+// 	}
+// 	40% { transform: translateX(20%)
+// 		scale(0.37) rotate(-10deg);
+// 	}
+// 	50% { transform: translateX(0%)
+// 		scale(0.40) rotate(0deg);
+// 	}
+// 	60% { transform: translateX(-20%)
+// 		scale(0.37) rotate(10deg);
+// 	}
+// 	70% { transform: translateX(-40%)
+// 		scale(0.33) rotate(20deg);
+// 	}
+// 	80% { transform: translateX(-60%)
+// 		scale(0.28) rotate(30deg);
+// 	}
+// 	90% { transform: translateX(-80%)
+// 		scale(0.15) rotate(60deg);
+// 	}
+// 	100% { transform: translateX(-100%)
+// 		scale(0.0) rotate(80deg);
+// 	}
+// }
 
 .landingHome .orbiter {
 	position: absolute;
