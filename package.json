@@ -43,7 +43,8 @@
     "react-dom": ">=16.8",
     "react-router-dom": ">=4",
     "react-router-hash-link": "^2.4.3",
-    "regenerator-runtime": "^0.13.9"
+    "regenerator-runtime": "^0.13.9",
+    "yarn": "^1.22.18"
   },
   "resolutions": {
     "@babel/preset-env": "7.13.8"
